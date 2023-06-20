@@ -16,6 +16,7 @@ class Attendance:
         self.root = root
         self.root.geometry("1530x800")
         self.root.title("Face Recogination System")
+        self.root.wm_iconbitmap("face.ico")
 
 
         self.var_id = StringVar()
@@ -53,10 +54,15 @@ class Attendance:
             "times new roman", 35, "bold"), bg="white", fg="darkgreen")
         title_lbl.place(x=0, y=0, width=1530, height=45)
 
+        button = Button(bgImage, text="Exit", font=("times new roman", 16, "bold"), command=root.destroy, relief=FLAT,borderwidth=2, bg="#4caf50", fg="white", activebackground="#45a049", activeforeground="white", width=10,  highlightthickness=0)
+        button.place(x=1360, y=3)
+
         # frames for attendance management
 
         main_frame = Frame(bgImage, bd=2)
         main_frame.place(x=20, y=50, width=1480, height=600)
+        
+         
 
         # leftSide Label Frame
 
@@ -217,6 +223,7 @@ class Attendance:
         for i in rows:
             self.AttendanceReportTable.insert("",END,values=i)
 
+    
     def import_csv(self):
         global myData
         filename=filedialog.askopenfilename(initialdir=os.getcwd(),title="Open CSV",filetypes=(("CSV File","*.csv"),("All files","*.*")),parent=self.root)

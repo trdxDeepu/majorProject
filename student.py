@@ -12,6 +12,7 @@ class Student:
         self.root = root
         self.root.geometry("1530x800")
         self.root.title("Face Recogination System")
+        self.root.wm_iconbitmap("face.ico")
 
      # <======Variables======>
 
@@ -63,6 +64,9 @@ class Student:
         title_lbl = Label(bgImage, text="Student Management System", font=(
             "times new roman", 35, "bold"), bg="white", fg="darkgreen")
         title_lbl.place(x=0, y=0, width=1530, height=45)
+
+        button = Button(bgImage, text="  Exit  ", font=("times new roman", 16, "bold"),command=self.back_btn,relief=FLAT,borderwidth=2, bg="#4caf50", fg="white", activebackground="#45a049", activeforeground="white", width=10,  highlightthickness=0)
+        button.place(x=1360, y=3)
 
         # frames for student management
 
@@ -316,19 +320,21 @@ class Student:
         search_label = Label(search_frame_Label, text="Serch by:", font=(
             "times new roman", 15, "bold"), bg="red", fg="white")
         search_label.grid(row=0, column=0, padx=10, pady=5, sticky=W)
-
+        
+        self.var_search_combo=StringVar()
         search_combo = ttk.Combobox(search_frame_Label, font=(
             "times new roman", 12, "bold"), width=15, state="readonly")
         search_combo["values"] = ("Select", "RollNo", "Phone", "Email")
         search_combo.current(0)
         search_combo.grid(row=0, column=1, padx=2, pady=10, sticky=W)
-
+        
+        self.var_search_entry=StringVar()
         search_entry = ttk.Entry(search_frame_Label, width=14, font=(
             "courier", 13, "bold"))
         search_entry.grid(row=0, column=2, padx=10, pady=5, sticky=W)
 
         search_btn = Button(search_frame_Label, text="Search", font=(
-            "courier", 12, "bold"), bg="blue", fg="white", width=12)
+            "courier", 12, "bold"), bg="blue", fg="white", width=12,command=self.search)
         search_btn.grid(row=0, column=3,)
 
         showAll_btn = Button(search_frame_Label, text="Show All", font=(
@@ -562,8 +568,51 @@ class Student:
         self.var_teacher.set("")
         self.var_radio1.set("")
     
-    
 
+    def back_btn(self):
+        self.root.destroy()  
+
+   
+
+    def search(self):
+        roll_no = self.var_search_entry.get()
+        phone = self.var_search_entry.get()
+
+    # Connect to the database
+        conn = mysql.connector.connect(host="localhost", username="root", password="Singhdepu@1", database="face_detection")
+        my_cursor = conn.cursor()
+
+    # Perform the search query
+        if self.var_search_combo.get() == "RollNo":
+            query = "SELECT * FROM student WHERE Roll = %s"
+            my_cursor.execute(query, (roll_no,))
+        elif self.var_search_combo.get() == "Phone":
+            query = "SELECT * FROM student WHERE Phone = %s"
+            my_cursor.execute(query, (phone,))
+        else:
+            messagebox.showinfo("Search Results", "Please select a search criteria.")
+            return
+
+        results = my_cursor.fetchall()
+    
+        if results:
+
+            messagebox.showinfo("Search Results", f"Found {len(results)} student(s) matching the search criteria.")
+
+            for student in results:
+            # Display student details
+                print(f"ID: {student[0]}")
+                print(f"Name: {student[1]}")
+                print(f"Roll No: {student[2]}")
+                print(f"Phone: {student[3]}")
+                print(f"Email: {student[4]}")
+                print("---")
+        else:
+            messagebox.showinfo("Search Results", "No students found matching the search criteria.")
+
+    # Close the database connection
+        my_cursor.close()
+        conn.close()
             
 
     # <=======Implementing the openCV===========>

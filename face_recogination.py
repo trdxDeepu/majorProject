@@ -15,12 +15,17 @@ class Face_recogination:
         self.root = root
         self.root.geometry("1530x800")
         self.root.title("Face Recogination System")
+        self.root.wm_iconbitmap("face.ico")
+
 
     # <=====Title==========>
 
         title_lbl = Label(self.root, text="Face Recogination", font=(
             "times new roman", 35, "bold"), bg="white", fg="green")
         title_lbl.place(x=0, y=0, width=1530, height=45)
+
+        button = Button(self.root, text="Exit", font=("times new roman", 16, "bold"), command=root.destroy, relief=FLAT, bg="#4caf50", fg="white", activebackground="#45a049", activeforeground="white", width=10, borderwidth=2, highlightthickness=0)
+        button.place(x=1360, y=11)
 
         img_top = Image.open(r"college_images\face_detector1.jpg")
         img_top = img_top.resize((650, 700), Image.LANCZOS)
@@ -45,7 +50,7 @@ class Face_recogination:
     #<====================Attendence System ==================>
 
     def mark_attendence(self,i,r,n,d):
-        with open("Attendence.csv","r+",newline="\n") as f :
+        with open("Attendence_Report\Attendence.csv","r+",newline="\n") as f :
             my_Data_List=f.readlines()
             name_list=[]
             for line in my_Data_List:

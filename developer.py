@@ -16,11 +16,15 @@ class Developer:
         self.root = root
         self.root.geometry("1530x800")
         self.root.title("Face Recogination System")
+        self.root.wm_iconbitmap("face.ico")
 
         
         title_lbl = Label(self.root, text="Developer", font=(
             "times new roman", 35, "bold"),  fg="blue")
         title_lbl.place(x=0, y=0, width=1530, height=45)
+
+        button = Button(self.root, text="Exit", font=("times new roman", 16, "bold"), command=root.destroy, relief=FLAT,borderwidth=2, bg="#4caf50", fg="white", activebackground="#45a049", activeforeground="white", width=10,  highlightthickness=0)
+        button.place(x=1360, y=11)
 
         img_top = Image.open(r"college_images\dev.jpg")
         img_top = img_top.resize((1530, 720), Image.LANCZOS)
@@ -46,6 +50,11 @@ class Developer:
         dev1_lbl = Label(main_frame, text="Sandeep Gautam,Mahesh,Deependra Singh", font=(
             "times new roman", 19, "bold"), bg="white", fg="black")
         dev1_lbl.place(x=0,y=240)
+
+        
+
+
+  
 
 
 

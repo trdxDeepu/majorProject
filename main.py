@@ -14,6 +14,7 @@ class Face_Recogination_System:
         self.root = root
         self.root.geometry("1530x790+0+0")
         self.root.title("Face Recogination System")
+        self.root.wm_iconbitmap("face.ico")
 
         img = Image.open(r"Images\1.jpg")
         img = img.resize((500, 130), Image.LANCZOS)
