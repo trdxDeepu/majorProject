@@ -53,7 +53,7 @@ class Face_Recogination_System:
         # Student Button
 
         img4 = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\gettyimages-1022573162.jpg")
+            r"college_images\gettyimages-1022573162.jpg")
         img4 = img4.resize((220, 220), Image.LANCZOS)
         self.photoImage4 = ImageTk.PhotoImage(img4)
 
@@ -68,7 +68,7 @@ class Face_Recogination_System:
         # Detector Button
 
         img5 = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\face_detector1.jpg")
+            r"college_images\face_detector1.jpg")
         img5 = img5.resize((220, 220), Image.LANCZOS)
         self.photoImage5 = ImageTk.PhotoImage(img5)
 
@@ -82,7 +82,7 @@ class Face_Recogination_System:
         #Attendence face button
 
         img6 = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\report.jpg")
+            r"college_images\report.jpg")
         img6 = img6.resize((220, 220), Image.LANCZOS)
         self.photoImage6 = ImageTk.PhotoImage(img6)
 
@@ -97,7 +97,7 @@ class Face_Recogination_System:
 
         
         img7 = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\help-desk-customer-care-team-icon-blue-square-button-isolated-reflected-abstract-illustration-89657179.jpg")
+            r"college_images\help-desk-customer-care-team-icon-blue-square-button-isolated-reflected-abstract-illustration-89657179.jpg")
         img7 = img7.resize((220, 220), Image.LANCZOS)
         self.photoImage7 = ImageTk.PhotoImage(img7)
 
@@ -110,7 +110,7 @@ class Face_Recogination_System:
 
         #Train data
         img8 = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\Train.jpg")
+            r"college_images\Train.jpg")
         img8 = img8.resize((220, 220), Image.LANCZOS)
         self.photoImage8 = ImageTk.PhotoImage(img8)
 
@@ -123,7 +123,7 @@ class Face_Recogination_System:
 
         #Photo Face 
         img9 = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\opencv_face_reco_more_data.jpg")
+            r"college_images\opencv_face_reco_more_data.jpg")
         img9 = img9.resize((220, 220), Image.LANCZOS)
         self.photoImage9 = ImageTk.PhotoImage(img9)
 
@@ -137,7 +137,7 @@ class Face_Recogination_System:
 
          #developer 
         img10 = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\Team-Management-Software-Development.jpg")
+            r"college_images\Team-Management-Software-Development.jpg")
         img10 = img10.resize((220, 220), Image.LANCZOS)
         self.photoImage10 = ImageTk.PhotoImage(img10)
 
@@ -151,7 +151,7 @@ class Face_Recogination_System:
 
          #Exit
         img11 = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\exit.jpg")
+            r"college_images\exit.jpg")
         img11 = img11.resize((220, 220), Image.LANCZOS)
         self.photoImage11 = ImageTk.PhotoImage(img11)
 

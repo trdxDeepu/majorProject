@@ -32,7 +32,7 @@ class Student:
         self.var_teacher = StringVar()
 
         img = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\smart-attendance.jpg")
+            r"college_images\smart-attendance.jpg")
         img = img.resize((500, 130), Image.LANCZOS)
         self.photoImage = ImageTk.PhotoImage(img)
 
@@ -80,7 +80,7 @@ class Student:
         left_frame.place(x=10, y=10, width=760, height=580)
 
         img_left = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\AdobeStock_303989091.jpeg")
+            r"college_images\AdobeStock_303989091.jpeg")
         img_left = img_left.resize((720, 130), Image.LANCZOS)
         self.photoImageLeft = ImageTk.PhotoImage(img_left)
 
@@ -304,7 +304,7 @@ class Student:
         right_frame.place(x=780, y=10, width=720, height=580)
 
         img_right = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\gettyimages-1022573162.jpg")
+            r"college_images\gettyimages-1022573162.jpg")
         img_right = img_right.resize((760, 130), Image.LANCZOS)
         self.photoImageRight = ImageTk.PhotoImage(img_right)
 

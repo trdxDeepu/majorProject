@@ -72,7 +72,7 @@ class Attendance:
 
         
         img_left = Image.open(
-            r"C:\Users\Depuj\Downloads\1628243597666college-images\college_images\AdobeStock_303989091.jpeg")
+            r"college_images\AdobeStock_303989091.jpeg")
         img_left = img_left.resize((720, 130), Image.LANCZOS)
         self.photoImageLeft = ImageTk.PhotoImage(img_left)
 
